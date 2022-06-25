@@ -12,17 +12,17 @@ int main()
 	grid = init_board(grid);
 	copy = generate_sudoku(copy);
 	do {
-		//system("cls");
-		printf("How many numbers do you want on your sudoku:\n(min:16 / max:32) ");
+		printf("How many numbers do you want on your sudoku:\n(min:16 / max:36) ");
 		scanf("%d", &quantity);
-	} while (quantity < 16 || quantity>32);
-	grid = create_puzzle(quantity, copy, grid);
+	} while (quantity < 16 || quantity > 36);
+	grid = create_puzzle(quantity + 1, copy, grid);
 	printGrid(grid);
 	printf("\n\n");
+	free(copy);
     if (sudoku_solve(grid) == true)
         printGrid(grid);
     else
         printf("No solution exists");
-
+	free(grid);
     return 0;
 }
