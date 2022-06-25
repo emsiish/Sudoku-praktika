@@ -1,4 +1,4 @@
-#include "generate_sudoku.h"
+#include "helper.h"
 
 bool find_free_space(struct board_t* board, int* row, int* column);
 bool is_num_in_row(struct board_t* board, int row, int num);
