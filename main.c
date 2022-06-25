@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "generate_sudoku.h"
 #include "solve_sudoku.h"
 
