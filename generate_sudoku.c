@@ -1,7 +1,5 @@
 #include "generate_sudoku.h"
 
-//new
-
 struct board_t* init_board(struct board_t* board)  //create a board full of 0
 {
 	int row, col;
@@ -48,9 +46,9 @@ bool repetitions_in_box(struct board_t* board, int row, int col)
 	{
 		if (col >= col - col % 3 && col < 3 + col - col % 3)
 		{
-			for (int s = row - row % 3; s < 3 + row - row % 3; s++) //box row?
+			for (int s = row - row % 3; s < 3 + row - row % 3; s++) // box row
 			{
-				for (int c = col - col % 3; c < 3 + col - col % 3; c++) //box col?
+				for (int c = col - col % 3; c < 3 + col - col % 3; c++) // box col
 				{
 					if (board->board[row][col] == board->board[s][c] && (s != row && c != col))
 					{
@@ -72,7 +70,7 @@ struct board_t* generate_sudoku(struct board_t* board)
 	{
 		for (int col = 0; col < 9; col++)
 		{
-			if (repetitions > 35)
+			if (repetitions > 45) //random chislo
 			{
 				for (int c = 0; c < 9; c++)
 				{
@@ -113,5 +111,3 @@ struct board_t* create_puzzle(int q, struct board_t* copy, struct board_t* board
 	}
 	return board;
 }
-
-//end of new
