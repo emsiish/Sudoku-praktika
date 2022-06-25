@@ -1,15 +1,4 @@
-#include <stdio.h>
-#include <stdbool.h>
-
-#pragma once
-#define FREE 0
-#define SIZE 9
-
-
-struct board_t {
-
-    int board[SIZE][SIZE];
-};
+#include "helper.h"
 
 struct board_t* init_board(struct board_t* board);
 bool repetitions_in_row(struct board_t* board, int row, int col);
