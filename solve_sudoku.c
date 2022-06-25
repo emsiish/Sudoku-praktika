@@ -1,5 +1,4 @@
-
-#include "generate_sudoku.h"
+#include "solve_sudoku.h"
 
 bool find_free_space(struct board_t* board, int* row, int* column)
 {
@@ -47,8 +46,11 @@ bool is_num_in_box(struct board_t* board, int box_row, int box_col, int num)
 
 bool is_safe(struct board_t* board, int row, int col, int num)
 {
-    return !is_num_in_row(board, row, num) && !is_num_in_col(board, col, num) && !is_num_in_box(board, row - row % 3, col - col % 3, num)
-        && board->board[row][col] == FREE;
+    if (!is_num_in_row(board, row, num) && !is_num_in_col(board, col, num) && !is_num_in_box(board, row - row % 3, col - col % 3, num) && board->board[row][col] == FREE)
+    {
+        return true;
+    }
+    return false;
 }
 
 bool sudoku_solve(struct board_t* board)
