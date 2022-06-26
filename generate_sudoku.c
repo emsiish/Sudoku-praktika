@@ -7,7 +7,7 @@ struct board_t* init_board(struct board_t* board)  //create a board full of 0
 	{
 		for (col = 0; col < 9; col++)
 		{
-			board->board[row][col] = 0;
+			board->board[row][col] = FREE;
 		}
 	}
 	return board;
@@ -74,7 +74,7 @@ struct board_t* generate_sudoku(struct board_t* board)
 			{
 				for (int c = 0; c < 9; c++)
 				{
-					board->board[row][c] = 0;
+					board->board[row][c] = FREE;
 				}
 				row--;
 				repetitions = 0;
@@ -102,7 +102,7 @@ struct board_t* create_puzzle(int q, struct board_t* copy, struct board_t* board
 	{
 		x = (rand() % 9) + 1;
 		y = (rand() % 9) + 1;
-		if (board->board[x][y] != 0)
+		if (board->board[x][y] != FREE)
 		{
 			i--;
 			continue;
