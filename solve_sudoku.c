@@ -2,9 +2,9 @@
 
 bool find_free_space(struct board_t* board, int* row, int* column)
 {
-    for (int x = 0; x < 9; x++)
+    for (int x = 0; x < SIZE; x++)
     {
-        for (int y = 0; y < 9; y++)
+        for (int y = 0; y < SIZE; y++)
         {
             if (!board->board[x][y])
             {
