@@ -14,7 +14,7 @@ int main()
 		printf("How many numbers do you want on your sudoku (level of difficulty):\n(min:16 / max:36) ");
 		scanf("%d", &quantity);
 	} while (quantity < 16 || quantity > 36);
-	grid = create_puzzle(quantity + 1, copy, grid);
+	grid = create_puzzle(quantity, copy, grid);
 	printGrid(grid);
 	printf("\n\n");
 	free(copy);
