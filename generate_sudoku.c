@@ -1,4 +1,5 @@
 #include "generate_sudoku.h"
+#include <time.h>
 
 struct board_t* init_board(struct board_t* board)  //create a board full of 0
 {
