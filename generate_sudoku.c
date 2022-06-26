@@ -2,10 +2,9 @@
 
 struct board_t* init_board(struct board_t* board)  //create a board full of 0
 {
-	int row, col;
-	for (row = 0; row < 9; row++)
+	for (int row = 0; row < 9; row++)
 	{
-		for (col = 0; col < 9; col++)
+		for (int col = 0; col < 9; col++)
 		{
 			board->board[row][col] = FREE;
 		}
@@ -16,8 +15,7 @@ struct board_t* init_board(struct board_t* board)  //create a board full of 0
 
 bool repetitions_in_row(struct board_t* board, int row, int col)
 {
-	int s;
-	for (s = 0; s < col; s++)
+	for (int s = 0; s < col; s++)
 	{
 		if (board->board[row][col] == board->board[row][s])
 		{
@@ -29,8 +27,7 @@ bool repetitions_in_row(struct board_t* board, int row, int col)
 
 bool repetitions_in_col(struct board_t* board, int row, int col)
 {
-	int s;
-	for (s = 0; s < row; s++)
+	for (int s = 0; s < row; s++)
 	{
 		if (board->board[row][col] == board->board[s][col])
 		{
