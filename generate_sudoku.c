@@ -98,8 +98,8 @@ struct board_t* create_puzzle(int q, struct board_t* copy, struct board_t* board
 	srand(time(NULL));
 	for (int i = 0; i < q; i++)
 	{
-		x = (rand() % 9) + 1;
-		y = (rand() % 9) + 1;
+		x = (rand() % 9);
+		y = (rand() % 9);
 		if (board->board[x][y] != FREE)
 		{
 			i--;
